@@ -4,14 +4,12 @@ export default function TodoList() {
   const [todoList, setTodoList] = useState([]);
   const [newItem, setNewItem] = useState('');
 
-  const handleAddItem = () => {
-    if (newItem.trim() !== '') {
+  const addItem = () => {
       setTodoList([...todoList, newItem]);
       setNewItem('');
-    }
   };
 
-  const handleDeleteItem = (index) => {
+  const deleteItem = (index) => {
     setTodoList(todoList.filter((val, i) => i !== index));
   };
 
@@ -19,11 +17,11 @@ export default function TodoList() {
     <div>
       <input type="text" value={newItem} 
 	   onChange={(e) => setNewItem(e.target.value)} />
-      <button onClick={handleAddItem}>Add</button>
+      <button onClick={addItem}>Add</button>
       <ul>
         {todoList.map((item, index) => (
           <li key={index}>
-            {item} <button onClick={() => handleDeleteItem(index)}>Delete</button>
+            {item} <button onClick={() => deleteItem(index)}>Delete</button>
           </li>
         ))}
       </ul>
