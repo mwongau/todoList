@@ -23,8 +23,7 @@ export default function TodoList() {
       <ul>
         {todoList.map((item, index) => (
           <li key={index}>
-            {item} 
-			<button onClick={() => handleDeleteItem(index)}>Delete</button>
+            {item} <button onClick={() => handleDeleteItem(index)}>Delete</button>
           </li>
         ))}
       </ul>
