@@ -17,7 +17,7 @@ export default function Todos() {
     setNewItem(e.target.value);
   };
   
-  const listItems = todoList.map((item, index) =>
+  const items = todoList.map((item, index) =>
     <li key={index}>
       {item} <button onClick={() => deleteItem(index)}>Delete</button>
     </li>
@@ -27,7 +27,7 @@ export default function Todos() {
     <div>
       <input type="text" value={newItem} onChange={handleChange} />
       <button onClick={addItem}>Add</button>
-      <ul>{listItems}</ul>
+      <ul>{items}</ul>
     </div>
   );
 }
