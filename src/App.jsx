@@ -15,12 +15,11 @@ export default function Todos() {
   
   function handleChange(e) {
     setNewItem(e.target.value);
-  }
+  };
 
   return (
     <div>
-      <input type="text" value={newItem} 
-	   onChange={handleChange} />
+      <input type="text" value={newItem} onChange={handleChange} />
       <button onClick={addItem}>Add</button>
       <ul>
         {todoList.map((item, index) => (
