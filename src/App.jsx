@@ -16,18 +16,18 @@ export default function Todos() {
   function handleChange(e) {
     setNewItem(e.target.value);
   };
+  
+  const listItems = todoList.map((item, index) =>
+    <li key={index}>
+      {item} <button onClick={() => deleteItem(index)}>Delete</button>
+    </li>
+  );
 
   return (
     <div>
       <input type="text" value={newItem} onChange={handleChange} />
       <button onClick={addItem}>Add</button>
-      <ul>
-        {todoList.map((item, index) => (
-          <li key={index}>
-            {item} <button onClick={() => deleteItem(index)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+      <ul>{listItems}</ul>
     </div>
   );
 }
