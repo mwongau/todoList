@@ -1,4 +1,4 @@
-import {React,  useState } from 'react';
+import { useState } from 'react';
 
 export default function Todos() {
   const [todoList, setTodoList] = useState([]);
@@ -10,22 +10,22 @@ export default function Todos() {
   };
 
   const deleteItem = (index) => {
-    setTodoList(todoList.filter((val, i) => i !== index));
+    setTodoList(todoList.filter((value, i) => i !== index));
   };
   
   function handleChange(e) {
     setNewItem(e.target.value);
   };
   
-  const items = todoList.map((item, index) =>
+  const items = todoList.map((value, index) =>
     <li key={index}>
-      {item} <button onClick={() => deleteItem(index)}>Delete</button>
+      {value} <button onClick={() => deleteItem(index)}>Delete</button>
     </li>
   );
 
   return (
     <div>
-      <input type="text" value={newItem} onChange={handleChange} />
+      <input value={newItem} onChange={handleChange} />
       <button onClick={addItem}>Add</button>
       <ul>{items}</ul>
     </div>
