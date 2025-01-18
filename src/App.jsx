@@ -1,4 +1,5 @@
 import { useState } from 'react';
+//import './App.css'
 
 export default function Todos() {
   const [todoList, setTodoList] = useState([]);
@@ -19,14 +20,14 @@ export default function Todos() {
   
   const items = todoList.map((value, index) =>
     <li key={index}>
-      {value} <button onClick={() => deleteItem(index)}>Delete</button>
+      {value} <button className="mybutton" onClick={() => deleteItem(index)}>Delete</button>
     </li>
   );
 
   return (
     <div>
       <input value={newItem} onChange={handleChange} />
-      <button onClick={addItem}>Add</button>
+      <button className="mybutton" onClick={addItem}>Add</button>
       <ul>{items}</ul>
     </div>
   );
